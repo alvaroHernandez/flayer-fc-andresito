@@ -21,14 +21,13 @@ img.onload = function () {
   document.getElementById("boxy").addEventListener("click", function(e){
     let a = document.getElementById("boxy");
     console.log(a)
-    console.log(e.screenX)
-    console.log(e.screenY)
+    console.log(e.x - box.positionX)
     console.log(x)
-    console.log(250 + y)
-    console.log(e.screenY  > (y + 250 ))
-    console.log((y + 250) + box.height)
-    if ( (e.screenX + box.width) > x  && (e.screenX + box.width) < (x + img.width) && (e.screenY - box.height)  > (y)  && (e.screenY - box.height) < ((y ) + img.height)  ){
-      window.location = 'https://thoughtworks.zoom.us/j/91937332744?pwd=UkZEbjdjY1M3NW1QcmIrczhOd2w3Zz09'
+    console.log(e.y)
+    console.log(y)
+    if ( (e.x - box.x )> x  && (e.x - box.x ) < (x + img.width) && ( e.y - box.y)  > y  && ( e.y - box.y)<  (y  + img.height)  ){
+      console.log('hola')
+      // window.location = 'https://thoughtworks.zoom.us/j/91937332744?pwd=UkZEbjdjY1M3NW1QcmIrczhOd2w3Zz09'
     }
 
     }, false);
