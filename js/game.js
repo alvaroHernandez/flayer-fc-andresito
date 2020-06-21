@@ -221,7 +221,7 @@ canvas.addEventListener('click', function(evt) {
     ludo2.play();
     state.stage = 3;
     setTimeout(() => {
-      window.location = 'https://thoughtworks.zoom.us/j/91042477005?pwd=NWN0R3doNG1XcGM1RHVuZXA0MEs2UT09'
+      window.location = 'https://thoughtworks.zoom.us/j/91042477005'
     }, 5000);
   }
 }, false);
