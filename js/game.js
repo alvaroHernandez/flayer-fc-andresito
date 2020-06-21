@@ -222,7 +222,7 @@ canvas.addEventListener('click', function(evt) {
     state.stage = 3;
     setTimeout(() => {
       window.location = 'https://thoughtworks.zoom.us/j/91042477005?pwd=NWN0R3doNG1XcGM1RHVuZXA0MEs2UT09'
-    }, 5000);
+    }, 6250);
   }
 }, false);
 
