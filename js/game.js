@@ -160,7 +160,7 @@ var gatoButton = {
   y:450,
   width:210,
   height:80,
-  text: 'gatoJuanito'
+  text: 'gato Juanito'
 };
 
 var andButton = {
@@ -174,9 +174,9 @@ var andButton = {
 var maButton = {
   x:1080,
   y:450,
-  width:210,
+  width:310,
   height:80,
-  text: 'la maite'
+  text: 'dj danamora en vivo'
 };
 
 var flyerrect = {
@@ -222,7 +222,7 @@ canvas.addEventListener('click', function(evt) {
     state.stage = 3;
     setTimeout(() => {
       window.location = 'https://thoughtworks.zoom.us/j/91042477005?pwd=NWN0R3doNG1XcGM1RHVuZXA0MEs2UT09'
-    }, 2000);
+    }, 5000);
   }
 }, false);
 
@@ -242,7 +242,7 @@ function draw() {
     drawButton(maButton)
   }else if(state.stage === 3){
     ctx.drawImage(totobien2,200,110);
-    ctx.drawImage(fly,500,110);
+    ctx.drawImage(fly,flyerrect.x,flyerrect.y);
 
   }
 
