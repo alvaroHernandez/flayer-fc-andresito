@@ -1,0 +1,8 @@
+body{
+  letter-spacing: 7px;
+}
+
+@font-face {
+  font-family: pokemon;
+  src: url('./Pokemon.ttf');
+}

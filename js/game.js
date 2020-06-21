@@ -4,11 +4,15 @@ import quien from '../img/quien.png';
 import totodile from '../img/totodile.jpg';
 import flyer from '../img/flyer.png';
 import totobien from '../img/tototransparente.png';
+import loser from '../img/loser.gif';
 
 import music from './04 Pallet Town.mp3';
 import ludo from '../img/ludo.mp3';
 
 import quienesaudio from './../img/quienesaudio.mp3';
+
+import style from './style.css';
+
 var audio = new Audio(music);
 audio.play();
 
@@ -59,6 +63,7 @@ audio2.loop = false;
 canvas.addEventListener('quien', playq, false);
 var quienevent = new Event('quien');
 function playq() {
+  audio.pause();
   audio2.play();
 }
 var moved = false
@@ -72,7 +77,6 @@ function update(progress) {
     moved = true
     state.stage = 2;
     canvas.dispatchEvent(quienevent);
-
   }
 }
 
@@ -147,12 +151,15 @@ fly.src = flyer
 var totobien2 = new Image();
 totobien2.src = totobien
 
+var gifi = new Image();
+gifi.src = loser
+
 var totoButton = {
   x:820,
   y:350,
-  width:210,
+  width:260,
   height:80,
-  text: 'totodile'
+  text: 'Gato Juanito'
 };
 
 var gatoButton = {
@@ -160,23 +167,23 @@ var gatoButton = {
   y:450,
   width:210,
   height:80,
-  text: 'gato Juanito'
+  text: 'Andresito'
 };
 
 var andButton = {
-  x:1080,
+  x:1100,
   y:350,
-  width:210,
+  width:200,
   height:80,
-  text: 'andresito'
+  text: 'Totodile'
 };
 
-var maButton = {
+var djButton = {
   x:1080,
   y:450,
-  width:310,
+  width:400,
   height:80,
-  text: 'dj danamora en vivo'
+  text: 'DJ Danamora en vivo'
 };
 
 var flyerrect = {
@@ -190,16 +197,15 @@ var flyerrect = {
 function drawButton(button){
   ctx.beginPath();
   ctx.rect(button.x, button.y, button.width, button.height);
-  ctx.fillStyle = '#FFFFFF';
-  ctx.fillStyle = 'rgba(225,225,225,0.5)';
+  ctx.fillStyle = 'rgba(0,0,225,0.5)';
   ctx.fillRect(25,72,32,32);
   ctx.fill();
   ctx.lineWidth = 2;
   ctx.strokeStyle = '#000000';
   ctx.stroke();
   ctx.closePath();
-  ctx.font = '25pt Kremlin Pro Web';
-  ctx.fillStyle = '#000000';
+  ctx.font = '25pt pokemon';
+  ctx.fillStyle = '#FFFF00';
   ctx.fillText(button.text, button.x + 30, button.y + 50);
 }
 
@@ -215,14 +221,12 @@ function isInside(pos, rect){
 }
 canvas.addEventListener('click', function(evt) {
   var mousePos = getMousePos(canvas, evt);
-  console.log(mousePos)
-  console.log(totoButton)
-  if (isInside(mousePos,totoButton)) {
+  if (isInside(mousePos,andButton)) {
     ludo2.play();
     state.stage = 3;
     setTimeout(() => {
       window.location = 'https://thoughtworks.zoom.us/j/91042477005'
-    }, 5000);
+    }, 6250);
   }
 }, false);
 
@@ -239,7 +243,7 @@ function draw() {
     drawButton(totoButton)
     drawButton(gatoButton)
     drawButton(andButton)
-    drawButton(maButton)
+    drawButton(djButton)
   }else if(state.stage === 3){
     ctx.drawImage(totobien2,200,110);
     ctx.drawImage(fly,flyerrect.x,flyerrect.y);
